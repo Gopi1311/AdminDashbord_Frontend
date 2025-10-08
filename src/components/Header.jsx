@@ -18,6 +18,7 @@ const Header = ({ setSidebarOpen }) => {
     "/addcustomer": "Customer Form",
     "/customerdetail": "Customer Details",
     "/viewproduct": "Product Details",
+    "/addproduct":"Add New Product",
   };
 
   const pathParts = location.pathname.split("/");
