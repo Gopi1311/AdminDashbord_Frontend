@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import Notification from "./Notification";
 import axios from "axios";
+import { BaseURL } from "../utils/BaseURL";
 
 const Header = ({ setSidebarOpen }) => {
   const [notify, setNotify] = useState(false);
@@ -26,7 +27,7 @@ const Header = ({ setSidebarOpen }) => {
   const [admin, setAdmin] = useState();
   useEffect(() => {
     axios
-      .get(`http://localhost:8081/api/admin`)
+      .get(`${BaseURL}admin`)
       .then((res) => {
         setAdmin(res.data);
       })
