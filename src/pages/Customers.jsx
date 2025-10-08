@@ -110,7 +110,7 @@ const Customers = () => {
           <div className="flex items-center justify-between">
             <div>
               <p className="text-sm font-medium text-gray-600">
-                Total Customers
+                Total Buyers
               </p>
               <p className="text-2xl font-semibold text-gray-900 mt-1">
                 {activeCustomer}
