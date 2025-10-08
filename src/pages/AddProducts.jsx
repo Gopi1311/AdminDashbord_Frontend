@@ -137,7 +137,7 @@ const AddProducts = () => {
       // Make API call to add product
 
       const result = await axios.post(
-        "http://localhost:8081/api/addproduct",
+        `${BaseURL}addproduct`,
         formData,
         {
           headers: {
