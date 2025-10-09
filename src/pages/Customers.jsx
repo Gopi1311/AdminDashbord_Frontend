@@ -53,43 +53,50 @@ const Customers = () => {
     <div className="space-y-6">
       {/* Header */}
       <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center space-y-4 sm:space-y-0">
-        <div>
-          <h2 className="text-2xl font-semibold text-gray-800">Customers</h2>
-          <p className="text-gray-600 mt-1">Manage your customer database</p>
-        </div>
-        <div className="flex space-x-3">
-          <div className="relative">
-            <input
-              type="text"
-              placeholder="Search customers..."
-              value={searchTerm}
-              onChange={(e) => setSearchTerm(e.target.value)}
-              className="pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-            />
-            <div className="absolute inset-y-0 left-0 pl-3 flex items-center">
-              <svg
-                className="h-5 w-5 text-gray-400"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-                />
-              </svg>
-            </div>
-          </div>
-          <Link
-            to="/addcustomer"
-            className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors"
-          >
-            Add Customer
-          </Link>
-        </div>
+  {/* Left Side: Title and Subtitle */}
+  <div>
+    <h2 className="text-2xl font-semibold text-gray-800">Customers</h2>
+    <p className="text-gray-600 mt-1">Manage your customer database</p>
+  </div>
+
+  {/* Right Side: Search and Add Button */}
+  <div className="flex flex-col sm:flex-row sm:items-center sm:space-x-3 w-full sm:w-auto sm:justify-end gap-2 sm:gap-0">
+    {/* Search Input */}
+    <div className="relative w-full sm:w-64">
+      <input
+        type="text"
+        placeholder="Search customers..."
+        value={searchTerm}
+        onChange={(e) => setSearchTerm(e.target.value)}
+        className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+      />
+      <div className="absolute inset-y-0 left-0 pl-3 flex items-center">
+        <svg
+          className="h-5 w-5 text-gray-400"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+          />
+        </svg>
       </div>
+    </div>
+
+    {/* Add Customer Button */}
+    <Link
+      to="/addcustomer"
+      className="w-full sm:w-auto text-center bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors"
+    >
+      Add Customer
+    </Link>
+  </div>
+</div>
+
 
       {/* Stats */}
       <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
@@ -109,9 +116,7 @@ const Customers = () => {
         <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
           <div className="flex items-center justify-between">
             <div>
-              <p className="text-sm font-medium text-gray-600">
-                Total Buyers
-              </p>
+              <p className="text-sm font-medium text-gray-600">Total Buyers</p>
               <p className="text-2xl font-semibold text-gray-900 mt-1">
                 {activeCustomer}
               </p>
