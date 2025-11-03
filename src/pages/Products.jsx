@@ -38,7 +38,16 @@ const Products = () => {
         setIsLoading(false);
       });
   }, []);
-
+    useEffect(() => {
+    axios
+      .get(`${BaseURL}test`)
+      .then((res) => {
+        console.log("Backend Test Response:", res.data);
+      })
+      .catch((err) => {
+        console.error("Error testing backend connection:", err);
+      });
+  }, []);
   return (
     <div className="bg-white rounded-lg shadow-sm border border-gray-200">
       <div className="p-6 border-b border-gray-200">
