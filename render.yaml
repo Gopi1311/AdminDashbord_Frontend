@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: frontend
+    env: docker
+    plan: free
+    region: oregon
+    dockerfilePath: ./Dockerfile
+    envVars:
+      - key: VITE_API_URL
+        value: https://backend-lb.onrender.com/api/

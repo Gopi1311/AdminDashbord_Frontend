@@ -22,6 +22,17 @@ const RecentOrders = () => {
       });
   }, []);
 
+  useEffect(() => {
+    axios
+      .get(`${BaseURL}test`)
+      .then((res) => {
+        console.log("Backend Test Response:", res.data);
+      })
+      .catch((err) => {
+        console.error("Error testing backend connection:", err);
+      });
+  }, []);
+
   const getStatusColor = (status) => {
     switch (status) {
       case "Delivered":
